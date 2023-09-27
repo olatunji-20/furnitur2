@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="border-4 border-red-800">
+    <div>
       <ProductCard :product="productsStore.product" />
     </div>
     <Reviews />

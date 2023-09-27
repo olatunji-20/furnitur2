@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="popup">
-      <div v-show="showPop" class="w-[90%] h-[4.375rem] absolute mx-[auto]">
+      <div v-show="showPop" class="w-[90%] h-[4.375rem] absolute mx-[auto] z-20">
         <div
           class="border-2 border-gray-300 rounded-sm bg-gray-100 text-center py-8 w-[60%] h-[auto] mx-[auto]"
         >
