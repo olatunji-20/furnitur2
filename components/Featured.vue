@@ -28,7 +28,7 @@
         :class="showD ? 'active' : 'non-active'"
         v-on:click="onHang"
       >
-        HANGING LIGHT
+        HANGING LIGHT{{ showing }}
       </ul>
     </ul>
     <div class="w-[68rem] h-[auto] my-16 mx-[auto] overflow-hidden">
@@ -41,15 +41,15 @@
 </template>
 
 <script>
-// import All from "~/components/All";
-// import OnSale from "~/components/OnSale";
-// import Sofa from "~/components/Sofa";
-// import HangingLight from "~/components/HangingLight";
+import { useProductsStore } from "../stores/ProductsStore";
 
 export default {
   name: "Featured",
   data() {
+    const productsStore = useProductsStore();
+    const showing = productsStore.showThis;
     return {
+      showing,
       showA: true,
       showB: false,
       showC: false,
@@ -59,35 +59,29 @@ export default {
   },
   methods: {
     all() {
-      this.showA = true;
-      this.showB = false;
-      this.showC = false;
-      this.showD = false;
+      this.showA = this.showing;
+      this.showB = !this.showing;
+      this.showC = !this.showing;
+      this.showD = !this.showing;
     },
     onSale() {
-      this.showA = false;
-      this.showB = true;
-      this.showC = false;
-      this.showD = false;
+      this.showA = !this.showing;
+      this.showB = this.showing
+      this.showC = !this.showing;
+      this.showD = !this.showing;
     },
     onSofa() {
-      this.showA = false;
-      this.showB = false;
-      this.showC = true;
-      this.showD = false;
+      this.showA = !this.showing;
+      this.showB = !this.showing;
+      this.showC = this.showing
+      this.showD = !this.showing;
     },
     onHang() {
-      this.showA = false;
-      this.showB = false;
-      this.showC = false;
-      this.showD = true;
+      this.showA = !this.showing;
+      this.showB = !this.showing;
+      this.showC = !this.showing;
+      this.showD = this.showing
     },
-  },
-  components: {
-    // All,
-    // OnSale,
-    // Sofa,
-    // HangingLight,
   },
   emits: ["onSofa"],
 };
