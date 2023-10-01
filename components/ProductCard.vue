@@ -6,7 +6,7 @@
       :number="number"
     />
     <div class="w-[50%] h-[34.375rem] text-center">
-      <div class="border-4 w-[25rem] h-[28.125rem] mx-[auto] my-12 relative bottom-0 duration-150 hover:shadow-lg hover:bottom-2">
+      <div class="border-4 w-[25rem] h-[28.125rem] mx-[auto] my-12 duration-150 hover:shadow-lg hover:scale-105">
         <img
           class="w-[100%] h-[100%] object-cover"
           :src="product.productImage"

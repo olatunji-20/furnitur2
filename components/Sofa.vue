@@ -1,6 +1,5 @@
 <template>
   <div class="w-[100%] h-[100%] flex flex-wrap">
-    <p class="text-center font-bold text-3xl">SOFA</p>
     <Card
       :link="'/sofa/'"
       :products="productsStore.sofaProds"

@@ -4,7 +4,6 @@ import { defineStore } from 'pinia'
 export const useProductsStore = defineStore('productsStore', {
     state: () => {
         return {
-            showThis: true,
             cartItems: [],
             products: [],
             prods: [],
@@ -74,7 +73,7 @@ export const useProductsStore = defineStore('productsStore', {
 
             if (existingItem) {
                 let existingItemIndex = this.cartItems.findIndex(
-                    item => item.id === existingItem.id
+                    item => item.productName === existingItem.productName
                 )
                 this.cartItems[existingItemIndex] = existingItem
                 existingItem.quantity = existingItem.quantity + payload.number
@@ -101,5 +100,7 @@ export const useProductsStore = defineStore('productsStore', {
             console.log("OPE O" + id)
         }
     },
-    persist: true,
+    persist: {
+        storage: persistedState.localStorage
+    },
 })
