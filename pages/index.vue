@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="announcement font-bold text-4xl my-16">
-      THIS WEBPAGE CAN ONLY BE VIEWED ON LARGE SCREENS
+      THIS WEBPAGE CAN ONLY BE VIEWED ON LARGE SCREENS (INTENTIONALLY MADE UNRESPONSIVE)
     </h1>
     <div class="lll">
       <!-- LANDING SECTION -->
